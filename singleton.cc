@@ -1,0 +1,42 @@
+ ///
+ /// @file    singleton.cc
+ /// @author  boluo(169180920@qq.com)
+ /// @date    2016-06-10 20:55:06
+ ///
+#include "singleton.h" 
+#include <iostream>
+using namespace std;
+
+Singleton * Singleton::_pInstance = NULL;
+
+Singleton * Singleton::getInstance()
+{
+    {	
+		if(_pInstance == NULL)
+			_pInstance = new Singleton;
+		return _pInstance;
+	}
+}
+void Singleton::destroy()
+{
+	delete _pInstance;
+}
+Singleton::~Singleton()
+{
+	cout << "~Singleton()" << endl;
+}
+Singleton::Singleton()
+{
+	cout << "Singleton()" << endl;
+}
+
+int main()
+{
+	Singleton *p1 = Singleton::getInstance();
+	Singleton *p2 = Singleton::getInstance();
+	printf("p1=%p\n",p1);
+	printf("p2=%p\n",p2);
+	Singleton::destroy();
+
+	return 0;
+}
