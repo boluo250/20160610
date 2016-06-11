@@ -12,7 +12,7 @@ using namespace std;
 
 int main()
 {
-	ifstream ifs("cinignore.cc");
+	ifstream ifs("cinignore.cc"); //只能打开已经存在的文件
 	if(!ifs.good())
 	{
 		cout << "ifstream open error" << endl;
