@@ -18,7 +18,7 @@ int main()
 		cout << "ifstream open error" << endl;
 		return -1;
 	}
-	ofstream ofs("data.bat");//文件不存在,会自动创建
+	ofstream ofs("data.bat");//文件不存在,会自动创建,文件存在会删除以前的数据
 	string str;
 	while(getline(ifs,str))
 	{
