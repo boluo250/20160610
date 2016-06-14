@@ -17,7 +17,7 @@ Singleton * Singleton::getInstance()
 		return _pInstance;
 	}
 }
-void Singleton::destroy()
+void Singleton::destroy() //delete不能放在析构函数里，delete类会调用析构函数,导致无线递归
 {
 	delete _pInstance;
 }
