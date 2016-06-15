@@ -23,7 +23,7 @@ void Singleton::destroy() //delete不能放在析构函数里，delete类会调�
 }
 Singleton::~Singleton()
 {
-	cout << "~Singleton()" << endl;
+	cout << "~Singleton()" << endl;//删除类里的数据成员
 }
 Singleton::Singleton()
 {
@@ -36,7 +36,7 @@ int main()
 	Singleton *p2 = Singleton::getInstance();
 	printf("p1=%p\n",p1);
 	printf("p2=%p\n",p2);
-	Singleton::destroy();删除不能在类之外,delete要和new一对使用,delete this要放在destroy里,放在析构函数里会无限递归
+	Singleton::destroy();//删除不能在类之外,delete要和new一对使用,delete this要放在destroy里,放在析构函数里会无限递归
 
 	return 0;
 }
